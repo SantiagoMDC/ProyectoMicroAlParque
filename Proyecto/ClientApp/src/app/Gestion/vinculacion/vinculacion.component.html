@@ -1,0 +1,81 @@
+<div class="content">
+    <h2 style="text-align: center;">VINCULAR MANIPULADOR A RESTAURANTE</h2>
+    <form [formGroup]="formRegister" (submit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Buscar Manipulador</label>
+            <div class="box-body">
+                <div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" >
+                      <div class="col-md-2">
+                            <button class="bt btn-primary" (click)="get()" >Buscar</button>
+                      </div>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label>Buscar Restaurante</label>
+            <div class="box-body">
+                <div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" >
+                      <div class="col-md-2">
+                            <button class="bt btn-primary" (click)="get()" >Buscar</button>
+                      </div>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="border: 1px solid slategrey">
+            <h4 style="text-align: center;">Datos de manipulador</h4>
+
+            <div class="form-group">
+                <label for="codigoPersona">codigoPersona:</label>
+                <input formControlName="codigoPersona" class="form-control" name="codigoPersona" [ngClass]="{ 'is-invalid':submitted && f.codigoPersona.errors}" type="text" placeholder="Codigo persona">
+                <div *ngIf="submitted && f.codigoPersona.errors" class="invalid-feedback">
+                  <div *ngIf="f.codigoPersona.errors.required">
+                    Codigo obligatorio
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nombrePersona">nombrePersona:</label>
+                <input formControlName="nombrePersona" class="form-control" name="nombrePersona" [ngClass]="{ 'is-invalid':submitted && f.nombrePersona.errors}" type="text" placeholder="Nombre Persona">
+                <div *ngIf="submitted && f.nombrePersona.errors" class="invalid-feedback">
+                  <div *ngIf="f.nombrePersona.errors.required">
+                    Nombre obligatorio
+                  </div>
+                </div>
+              </div>
+            
+        </div>
+        <div class="col-md-6" style="border: 1px solid slategrey">
+            <h4 style="text-align: center;">Datos de Restaurante</h4>
+
+            <div class="form-group">
+                <label>Codigo de Establecimiento</label>
+                <input disabled name="identificacion" class ="form-control" [(ngModel)]="persona.identificacion">
+            </div>
+            <div class="form-group">
+                <label>Nombre de Establecimiento</label>
+                <input disabled name="fechaDeVacuna" class="form-control" [(ngModel)]="vacunas.fechaDeVacuna">
+            </div>
+            
+            
+        </div>
+        <div class="col-md-12">
+            <h2></h2>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+              <label></label>
+              <button class="btn btn-vinculo form-control" type="submit">Vincular</button>
+            </div>
+          </div>
+
+
+    </div>
+    </form>
+</div>
