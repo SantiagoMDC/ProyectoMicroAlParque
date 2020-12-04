@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { Persona } from 'src/app/models/persona';
+import { Restaurante } from 'src/app/models/restaurante';
 import { Vinculacion } from 'src/app/models/vinculacion';
+import { PersonaService } from 'src/app/services/persona.service';
+import { RestauranteService } from 'src/app/services/restaurante.service';
 import { VinculacionService } from 'src/app/services/vinculacion.service';
 
 @Component({
@@ -14,14 +18,20 @@ export class VinculacionComponent implements OnInit {
 
   formRegister: FormGroup;
   vinculacion: Vinculacion;
+  restaurante:Restaurante;
+  persona:Persona;
   submitted = false;
   constructor(
+    private servicep:PersonaService,
+    private service:RestauranteService,
     private vinculacionService: VinculacionService,
     private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
     
 
   ngOnInit() {
+    this.restaurante = new Restaurante;
+    this.persona = new Persona;
     this.builForm();
   }
 
@@ -45,7 +55,6 @@ export class VinculacionComponent implements OnInit {
   }
 
   add() {
-    this.vinculacion = this.formRegister.value;
     this.vinculacionService.registrar(this.vinculacion).subscribe(p => {
       if (p != null) {
         this.onReset();
@@ -56,6 +65,42 @@ export class VinculacionComponent implements OnInit {
         
       }
     })
+  }
+  getR(){
+    this.service.buscarIdentificacion(this.restaurante.codigo).subscribe(result => {
+      this.restaurante = result;
+      this.vinculacion.codigoRestaurante = this.restaurante.codigo;
+      this.vinculacion.nombreRestaurante = this.restaurante.nombre;
+      if(result != null){
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Restautante Encontrado !! :-)';
+      }else{
+        const messageBox1 = this.modalService.open(AlertModalComponent)
+        messageBox1.componentInstance.title = "Resultado Operación";
+        messageBox1.componentInstance.message = 'Restautante No Encontrado !! :-)';
+
+      }
+    });
+  }
+  getP(){
+    this.servicep.buscarIdentificacion(this.persona.identificacion).subscribe(result => {
+      this.persona = result;
+      this.vinculacion.codigoPersona = this.persona.identificacion;
+      this.vinculacion.nombrePersona = this.persona.nombre;
+      if(result != null){
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Persona Encontrada !! :-)';
+      }else{
+        const messageBox1 = this.modalService.open(AlertModalComponent)
+        messageBox1.componentInstance.title = "Resultado Operación";
+        messageBox1.componentInstance.message = 'Persona No Encontrada !! :-(';
+
+      }
+
+
+    });
   }
 
   onSubmit() {

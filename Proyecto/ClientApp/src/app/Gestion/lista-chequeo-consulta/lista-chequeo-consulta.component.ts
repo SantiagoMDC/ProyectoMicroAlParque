@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaChequeo } from 'src/app/models/lista-chequeo';
+import { ListaChequeoService } from 'src/app/services/lista-chequeo.service';
 
 @Component({
   selector: 'app-lista-chequeo-consulta',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaChequeoConsultaComponent implements OnInit {
 
-  constructor() { }
+  listaChequeos:ListaChequeo[];
+  Total :Number = 0;
+  searchText = "";
+  searchText1 = "";
+  constructor(private service:ListaChequeoService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.get();
+  }
+  get(){
+    this.service.Consultar().subscribe(result => {
+      this.listaChequeos = result;
+    });
   }
 
 }

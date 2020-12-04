@@ -14,5 +14,6 @@ namespace Datos
         public DbSet<Restaurante>restaurantes{get;set;}
 
         public DbSet<Vinculacion>vinculaciones{get;set;}
+        public DbSet<ListaChequeo>listaChequeos{get;set;}
     }
 }

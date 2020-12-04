@@ -7,6 +7,27 @@ namespace Datos.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "listaChequeos",
+                columns: table => new
+                {
+                    CodigoRestaurante = table.Column<string>(nullable: false),
+                    NombreRestaurante = table.Column<string>(nullable: true),
+                    Item1 = table.Column<string>(nullable: true),
+                    Item2 = table.Column<string>(nullable: true),
+                    Item3 = table.Column<string>(nullable: true),
+                    Item4 = table.Column<string>(nullable: true),
+                    Item5 = table.Column<string>(nullable: true),
+                    Item6 = table.Column<string>(nullable: true),
+                    Item7 = table.Column<string>(nullable: true),
+                    Item8 = table.Column<string>(nullable: true),
+                    Item9 = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_listaChequeos", x => x.CodigoRestaurante);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "personas",
                 columns: table => new
                 {
@@ -72,6 +93,9 @@ namespace Datos.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "listaChequeos");
+
             migrationBuilder.DropTable(
                 name: "personas");
 

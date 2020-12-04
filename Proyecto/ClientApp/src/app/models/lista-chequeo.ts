@@ -1,4 +1,6 @@
 export class ListaChequeo{
+    codigoRestaurante:string;
+    nombreRestaurante:string;
     item1:string;
     item2:string;
     item3:string;
@@ -8,5 +10,4 @@ export class ListaChequeo{
     item7:string;
     item8:string;
     item9:string;
-    item10:string;
 }

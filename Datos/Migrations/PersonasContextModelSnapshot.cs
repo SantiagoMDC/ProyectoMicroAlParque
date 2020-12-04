@@ -18,6 +18,46 @@ namespace Datos.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Entity.ListaChequeo", b =>
+                {
+                    b.Property<string>("CodigoRestaurante")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Item1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item5")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item6")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item7")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item8")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item9")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreRestaurante")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CodigoRestaurante");
+
+                    b.ToTable("listaChequeos");
+                });
+
             modelBuilder.Entity("Entity.Persona", b =>
                 {
                     b.Property<string>("Identificacion")
