@@ -8,56 +8,64 @@ import { RestauranteConsultaComponent } from './Gestion/restaurante-consulta/res
 import { ListaChequeoRegisterComponent } from './Gestion/lista-chequeo-register/lista-chequeo-register.component';
 import { ListaChequeoConsultaComponent } from './Gestion/lista-chequeo-consulta/lista-chequeo-consulta.component';
 import { HomeComponent } from './home/home.component';
-import { ExamenComponent } from './Gestion/examen/examen.component';
+
 import { VinculacionComponent} from './Gestion/vinculacion/vinculacion.component';
 import { VinculacionConsultaComponent} from './Gestion/vinculacion-consulta/vinculacion-consulta.component';
 import { LoginComponent } from './login/login.component' 
+import { AuthGuard } from './services/auth.guard';
+
 import { from } from 'rxjs';
 const routes:Routes = [
-  
-  {
-    path:'personaRegister',
-    component:PersonaRegisterComponent
-  },
-  {
-    path:'personaConsulta',
-    component:PersonaConsultaComponent
-  },
-  {
-    path:'restauranteRegister',
-    component:RestauranteRegisterComponent
-  },
-  {
-    path:'restauranteConsulta',
-    component:RestauranteConsultaComponent
-  },
-  {
-    path:'listaChequeoRegister',
-    component:ListaChequeoRegisterComponent
-  },
-  {
-    path:'listaChequeoConsulta',
-    component:ListaChequeoConsultaComponent
-  },
-  {
-    path:'homeComponent',
-    component:HomeComponent
-  },
-  {
-    path:'examenComponent',
-    component:ExamenComponent
-  },
-  {
-    path:'vinculacionComponent',
-    component:VinculacionComponent
-  },
-  {
-    path:'vinculacionConsultaComponent',
-    component:VinculacionConsultaComponent
-  },
+  {path: '', redirectTo:'/loginComponent', pathMatch:'full'},
   {
     path:'loginComponent',
     component:LoginComponent
+  },
+  
+  {
+    path:'personaRegister',
+    component:PersonaRegisterComponent,canActivate: [AuthGuard]
+
+  },
+  {
+    path:'personaConsulta',
+    component:PersonaConsultaComponent,canActivate: [AuthGuard]
+
+  },
+  {
+    path:'restauranteRegister',
+    component:RestauranteRegisterComponent,canActivate: [AuthGuard]
+
+  },
+  {
+    path:'restauranteConsulta',
+    component:RestauranteConsultaComponent,canActivate: [AuthGuard]
+
+  },
+  {
+    path:'listaChequeoRegister',
+    component:ListaChequeoRegisterComponent,canActivate: [AuthGuard]
+
+  },
+  {
+    path:'listaChequeoConsulta',
+    component:ListaChequeoConsultaComponent,canActivate: [AuthGuard]
+
+  },
+  {
+    path:'homeComponent',
+    component:HomeComponent,
+
+  },
+  {
+    path:'vinculacionComponent',
+    component:VinculacionComponent,canActivate: [AuthGuard]
+
+  },
+  {
+    path:'vinculacionConsultaComponent',
+    component:VinculacionConsultaComponent,canActivate: [AuthGuard]
+
   }
 ];
 

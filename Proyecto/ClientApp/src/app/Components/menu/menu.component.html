@@ -50,19 +50,7 @@
                     <li><a routerLink="/listaChequeoConsulta">Consultar</a></li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-file-text-o"></i>
-                    <span>Examenes</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a routerLink="/examenComponent">Guardar Examenes</a></li>
-                    <li><a routerLink="/#">Consultar Examenes</a></li>
-                </ul>
-            </li>
+            
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-thumb-tack"></i>
@@ -76,6 +64,11 @@
                     <li><a routerLink="/vinculacionConsultaComponent">Consultar</a></li>
                 </ul>
             </li>
+            <ul class="sidebar-menu" data-widget="tree" style="margin-top: 120px;">
+                <li class="treeview">
+                    <a style="cursor: pointer;" (click)="logout()"><i class="fa fa-sign-out" ></i><span>Cerrar Sesion</span></a>
+                </li>
+            </ul>
             
         </ul>
         

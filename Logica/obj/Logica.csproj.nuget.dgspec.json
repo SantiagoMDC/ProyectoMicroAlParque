@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Logica\\Logica.csproj": {}
+    "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Logica\\Logica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Datos\\Datos.csproj": {
+    "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Datos\\Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Datos\\Datos.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Datos\\Datos.csproj",
         "projectName": "Datos",
-        "projectPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Datos\\Datos.csproj",
+        "projectPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Datos\\Datos.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Datos\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -25,8 +25,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj"
+              "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj": {
+    "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -128,14 +128,14 @@
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Logica\\Logica.csproj": {
+    "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Logica\\Logica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Logica\\Logica.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Logica\\Logica.csproj",
         "projectName": "Logica",
-        "projectPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Logica\\Logica.csproj",
+        "projectPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Logica\\Logica.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Logica\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Logica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -149,11 +149,11 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Datos\\Datos.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Datos\\Datos.csproj"
+              "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Datos\\Datos.csproj": {
+                "projectPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Datos\\Datos.csproj"
               },
-              "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj"
+              "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj"
               }
             }
           }

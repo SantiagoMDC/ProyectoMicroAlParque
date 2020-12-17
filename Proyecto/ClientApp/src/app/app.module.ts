@@ -26,10 +26,11 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
 import { FiltroRestaurantePipe } from './pipe/filtro-restaurante.pipe';
 import { VinculacionComponent } from './Gestion/vinculacion/vinculacion.component';
-import { ExamenComponent } from './Gestion/examen/examen.component';
 import { VinculacionConsultaComponent } from './Gestion/vinculacion-consulta/vinculacion-consulta.component';
 import { FiltroVinculacionPipe } from './pipe/filtro-vinculacion.pipe';
 import { LoginComponent } from './login/login.component';
+import {JwtInterceptor} from './services/jwt.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +53,6 @@ import { LoginComponent } from './login/login.component';
     FiltroPersonaPipe,
     FiltroRestaurantePipe,
     VinculacionComponent,
-    ExamenComponent,
     VinculacionConsultaComponent,
     FiltroVinculacionPipe,
     LoginComponent
@@ -71,7 +71,7 @@ import { LoginComponent } from './login/login.component';
     NgbModule
   ],
   entryComponents:[AlertModalComponent],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

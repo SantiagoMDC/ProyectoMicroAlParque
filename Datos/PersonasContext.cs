@@ -15,5 +15,8 @@ namespace Datos
 
         public DbSet<Vinculacion>vinculaciones{get;set;}
         public DbSet<ListaChequeo>listaChequeos{get;set;}
+
+        public DbSet<User> Users { get; set; }
+
     }
 }

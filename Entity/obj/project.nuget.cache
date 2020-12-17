@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wWsRv4G3N+wT0bNHBvcK9WR+QQYSoWf5FD1R7NIRL7SjvH5SalqJhJYh1qklzSKFYP8UWM8x4CTeiA6iqnNmCA==",
+  "dgSpecHash": "XV68loiHBFz08tvyT0US1VjWS6ODvkROKJd0IgtQ49Hpx5uuOtDdHBzjrc/owY61cJizf0/PTlZFZunWQbIB6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],

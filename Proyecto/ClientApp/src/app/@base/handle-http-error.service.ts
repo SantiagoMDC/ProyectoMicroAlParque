@@ -20,6 +20,10 @@ export class HandleHttpErrorService {
         if (error.status == "400") {
         this.mostrarError400(error);
         }
+         if (error.status == "401") {
+                  this.mostrarError(error);
+                }
+          
 
       return of(result as T);
     };
@@ -66,6 +70,25 @@ export class HandleHttpErrorService {
       const modalRef = this.modalService.open(AlertModalComponent);
       modalRef.componentInstance.title = 'Mensaje de Error';
       modalRef.componentInstance.message = mensajeValidaciones;
+    }
+
+    private mostrarError(error: any): void {
+      console.error(error);
+      let contadorValidaciones: number = 0;
+      let mensajeValidaciones: string =
+      `Señor(a) usuario(a), se han presentado algunos errores de validación, por favor revíselos y vuelva a realizar la
+      operación.<br/><br/>`;
+      for (const prop in error.error.errors) {
+      contadorValidaciones++;
+      mensajeValidaciones += `<strong>${contadorValidaciones}. ${prop}:</strong>`;
+      error.error.errors[prop].forEach(element => {
+      mensajeValidaciones += `<br/> - ${element}`;
+      });
+      mensajeValidaciones += `<br/>`;
       }
+      const modalRef = this.modalService.open(AlertModalComponent);
+      modalRef.componentInstance.title = 'Mensaje de Error';
+      modalRef.componentInstance.message = mensajeValidaciones;
+    }
 }
 

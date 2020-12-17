@@ -115,11 +115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
+      "projectPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\Entity.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\ProyectoMicro\\ProyectoMicroAlParque\\Entity\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Documents\\ProyectoMicroAlParque\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
