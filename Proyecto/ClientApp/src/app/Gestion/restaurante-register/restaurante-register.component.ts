@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Restaurante } from '../../models/restaurante';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SignalRService } from 'src/app/services/signal-r.service';
 
 
 @Component({
@@ -19,7 +20,9 @@ export class RestauranteRegisterComponent implements OnInit {
   constructor(
     private restauranteService: RestauranteService,
     private formBuilder: FormBuilder,
-    private modalService: NgbModal) { }
+    private modalService: NgbModal,
+    private signalRService: SignalRService
+    ) { }
     
 
   ngOnInit() {
@@ -71,4 +74,5 @@ export class RestauranteRegisterComponent implements OnInit {
     this.submitted = false;
     this.formRegister.reset();
   }
+  
 }

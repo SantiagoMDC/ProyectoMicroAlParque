@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Proyecto.Config;
+using Proyecto.Hubs;
 
 namespace Proyecto
 {
@@ -83,10 +84,13 @@ namespace Proyecto
             });
 
             // In production, the Angular files will be served from this directory
+            services.AddSignalR();
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -128,6 +132,7 @@ namespace Proyecto
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapHub<SignalHub>("signalHub");
             });
 
             app.UseSwagger();

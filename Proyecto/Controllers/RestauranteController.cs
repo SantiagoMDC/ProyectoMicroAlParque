@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Proyecto.Models;
 using Datos;
+using Microsoft.AspNetCore.SignalR;
+using System.Threading.Tasks;
+using Proyecto.Hubs;
 
 namespace Proyecto.Controllers
 {
@@ -16,10 +19,11 @@ namespace Proyecto.Controllers
     public class RestauranteController : ControllerBase
     {
         private readonly RestauranteService _restauranteService;
+        private readonly IHubContext<SignalHub> _hubContext;
         public IConfiguration Configuration { get; }
-        public RestauranteController(PersonasContext context)
+        public RestauranteController(PersonasContext context, IHubContext<SignalHub> hubContext)
         {
-            
+            _hubContext = hubContext;
             _restauranteService = new RestauranteService(context);
         }
 	private Restaurante MapearRestaurante(RestauranteInputModel restauranteInput)
@@ -43,7 +47,7 @@ namespace Proyecto.Controllers
         }
 
         [HttpPost]
-        public ActionResult<RestauranteViewModel> Post(RestauranteInputModel restauranteInput)
+        public async Task<ActionResult<RestauranteViewModel>> PostAsync(RestauranteInputModel restauranteInput)
         {
             Restaurante Restaurante = MapearRestaurante(restauranteInput);
             var response = _restauranteService.Guardar(Restaurante);
@@ -56,6 +60,7 @@ namespace Proyecto.Controllers
                 };
                 return BadRequest(problemDetails);
             }
+            await _hubContext.Clients.All.SendAsync("RegistrarRestaurante", response.Restaurante);
             return Ok(response.Restaurante);
         }
 
@@ -64,6 +69,16 @@ namespace Proyecto.Controllers
         {
             var restaurante = _restauranteService.BuscarxIdentificacion(codigo);
             return restaurante;
+        }
+
+        private Restaurante MapearRestaurante(Restaurante restaurante){
+            var _restaurante = new Restaurante{
+                Codigo = restaurante.Codigo,
+                Nombre = restaurante.Nombre,
+                Direccion = restaurante.Direccion,
+                Telefono = restaurante.Telefono
+            };
+            return _restaurante;
         }
 
         
